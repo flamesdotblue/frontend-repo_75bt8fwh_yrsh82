@@ -2,6 +2,7 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { Rocket, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
+import DevicePad from './DevicePad';
 
 const Hero = () => {
   return (
@@ -58,7 +59,7 @@ const Hero = () => {
           className="mt-8 flex flex-wrap items-center justify-center gap-3"
         >
           <a
-            href="#how"
+            href="#features"
             className="group inline-flex items-center gap-2 rounded-xl bg-white/90 px-5 py-3 font-medium text-slate-900 shadow-md shadow-white/10 transition hover:bg-white"
           >
             Get started
@@ -72,6 +73,11 @@ const Hero = () => {
             See features
           </a>
         </motion.div>
+
+        {/* iPad on hero */}
+        <div className="pointer-events-none relative mt-12 flex w-full justify-center">
+          <DevicePad />
+        </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-white/60 md:flex">
