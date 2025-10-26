@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Badge = ({ label }) => (
-  <div className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/90 backdrop-blur-md transition hover:border-white/20">
+  <motion.div
+    initial={{ opacity: 0, y: 8 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ duration: 0.5 }}
+    className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/90 backdrop-blur-md transition hover:border-white/20"
+  >
     <div className="h-2 w-2 rounded-full bg-emerald-400/80 group-hover:bg-emerald-300" />
     <span className="font-medium tracking-wide">{label}</span>
-  </div>
+  </motion.div>
 );
 
 const IntegrationsStrip = () => {
@@ -13,10 +20,16 @@ const IntegrationsStrip = () => {
     <section className="relative w-full bg-slate-950/60 py-14 text-white">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md">
+        <motion.div
+          initial={{ opacity: 0, y: 6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md"
+        >
           <Link2 className="h-3.5 w-3.5 text-cyan-300" />
           <span>Live broker integrations</span>
-        </div>
+        </motion.div>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Badge label="MT5" />
           <Badge label="Sterling" />
@@ -24,9 +37,15 @@ const IntegrationsStrip = () => {
           <Badge label="FIX / WebSocket" />
           <Badge label="Risk Controls" />
         </div>
-        <p className="mt-4 text-center text-sm text-white/60">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-4 text-center text-sm text-white/60"
+        >
           Execute once. Stream everywhere. We handle routing, latency and reconciliation.
-        </p>
+        </motion.p>
       </div>
     </section>
   );

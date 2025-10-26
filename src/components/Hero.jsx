@@ -1,6 +1,7 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { Rocket, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
@@ -21,21 +22,41 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md shadow-lg"
+        >
           <Rocket className="h-4 w-4 text-cyan-400" />
           <span className="text-xs/4 font-medium tracking-wide text-white/80">Next‑gen Copy Trading Platform</span>
-        </div>
+        </motion.div>
 
-        <h1 className="mt-6 bg-gradient-to-br from-white via-white to-white/70 bg-clip-text text-5xl font-semibold leading-tight text-transparent md:text-6xl lg:text-7xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.1, ease: 'easeOut' }}
+          className="mt-6 bg-gradient-to-br from-white via-white to-white/70 bg-clip-text text-5xl font-semibold leading-tight text-transparent md:text-6xl lg:text-7xl"
+        >
           Apple‑level design for effortless copy trading
-        </h1>
+        </motion.h1>
 
-        <p className="mt-5 max-w-2xl text-balance text-white/70 md:text-lg">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+          className="mt-5 max-w-2xl text-balance text-white/70 md:text-lg"
+        >
           Mirror trades from elite strategists across MT5, Sterling, and Tradejini—
           with glass‑morphic elegance, buttery scroll, and real‑time execution.
-        </p>
+        </motion.p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-3"
+        >
           <a
             href="#how"
             className="group inline-flex items-center gap-2 rounded-xl bg-white/90 px-5 py-3 font-medium text-slate-900 shadow-md shadow-white/10 transition hover:bg-white"
@@ -50,7 +71,7 @@ const Hero = () => {
             <Play className="h-4 w-4" />
             See features
           </a>
-        </div>
+        </motion.div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-white/60 md:flex">
