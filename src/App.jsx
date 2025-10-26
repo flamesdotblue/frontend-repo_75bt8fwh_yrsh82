@@ -1,28 +1,31 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import IntegrationsStrip from './components/IntegrationsStrip';
+import HowItWorks from './components/HowItWorks';
+import FeaturesGrid from './components/FeaturesGrid';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen w-full bg-slate-950 text-white">
+      <Hero />
+      <IntegrationsStrip />
+      <HowItWorks />
+      <FeaturesGrid />
+      <section className="w-full bg-slate-950 py-16">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h3 className="text-xl font-semibold text-white">Ready to launch your strategy?</h3>
+          <p className="mt-2 text-white/70">
+            Onboard as a strategist or subscriber in minutes. Experience design that feels like magic.
+          </p>
+          <div className="mt-6 flex justify-center gap-3">
+            <a href="#" className="rounded-xl bg-white/90 px-5 py-3 font-medium text-slate-900 shadow-md shadow-white/10 transition hover:bg-white">Start copying</a>
+            <a href="#" className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-medium text-white/90 backdrop-blur-md transition hover:border-white/25">Become a strategist</a>
+          </div>
+          <p className="mt-10 text-xs text-white/50">© {new Date().getFullYear()} Your Brand. All rights reserved.</p>
         </div>
-      </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
