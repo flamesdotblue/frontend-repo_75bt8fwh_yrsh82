@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './components/Hero';
 import IntegrationsStrip from './components/IntegrationsStrip';
 import HowItWorks from './components/HowItWorks';
-import FeatureFlipSection from './components/FeatureFlipSection';
+import AlternatingShowcase from './components/AlternatingShowcase';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Hero />
       <IntegrationsStrip />
       <HowItWorks />
-      <FeatureFlipSection />
+      <AlternatingShowcase />
       <section className="w-full bg-slate-950 py-16">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h3 className="text-xl font-semibold text-white">Ready to launch your strategy?</h3>
